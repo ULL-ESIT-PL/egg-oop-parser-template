@@ -1,4 +1,13 @@
 #!/bin/bash
-bin/eggc.js $1.egg
-# add in this folder the evm executable with oop extensions
-bin/evm $1.json
+if [ $# -eq 0 ]
+then
+    echo "Example of usage \"bin/egg examples/array-dot.egg\""
+    exit 1
+fi
+BASENAME=${1/.egg/}
+bin/eggc.js "$BASENAME".egg
+if [ $? -ne 0 ]
+then
+    exit 1
+fi
+bin/evm $BASENAME.json

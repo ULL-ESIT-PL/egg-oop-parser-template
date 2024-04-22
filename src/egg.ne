@@ -42,8 +42,6 @@ curlyExp   -> "{"  commaExp "}"
 selector   ->  
      "." %WORD           
    | "." %NUMBER         
-commaExp -> null                 
-   | expression ("," expression  
-
-optProperties -> null 
+commaExp -> null          
+     /* fill in */  
    | properties       
